@@ -10,14 +10,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="gameinit()">
+    <header>
+        <div>gem</div>
+        <div id="sc">score:100</div > 
+    </header>
+    <section>
 
 
-    <img src="img/Q.jpg" alt="Question card" id="" class="">
-    <img src="img/Q.jpg" alt="Question card" id="" class="">
-    <img src="img/Q.jpg" alt="Question card" id="" class="">
-    <img src="img/Q.jpg" alt="Question card" id="" class="">
+        <img src="img/Q.jpg" onclick="number(1)" alt="Question card" id="p1" class="QPanel" width="200px"
+            height="200px">
+        <img src="img/Q.jpg" onclick="number(2)" alt="Question card" id="p2" class="QPanel" width="200px"
+            height="200px">
+        <img src="img/Q.jpg" onclick="number(3)" alt="Question card" id="p3" class="QPanel" width="200px"
+            height="200px">
+        <img src="img/Q.jpg" onclick="number(4)" alt="Question card" id="p4" class="QPanel" width="200px"
+            height="200px">
 
+    </section>
 
 </body>
 
