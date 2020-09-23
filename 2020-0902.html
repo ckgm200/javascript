@@ -10,6 +10,21 @@
         }
     </style>
     <script>
+        function saikoro(){
+            var w=Math.floor(Math.random()*6+1)
+            return w
+        }
+        function myDraw2(){
+            var s=new Array(0,0,0,0,0,0,0,0)
+            for(var i=1;i<10000;i++){
+                s[saikoro()]++
+            }
+            var item=documet.getElementById("canvas")
+            var context=documet.getContext("2d")
+            if(item.getContext){
+                
+            }
+        }
         var baseX = 300
         var baseY = 200
         //  x座標の返還

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .boxes {
+            border: solid 2px red;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            vertical-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+    <script>
+        function drawGame() {
+            // alert("ok")
+            var mydiv
+            for (var k = 0; k < 10; k++) {
+                mydiv = document.createElement('div')
+                console.log(mydiv)
+                mydiv.className = 'boxes'
+                console.log(mydiv.className)
+                mydiv.innerText = '己'
+                console.log(mydiv.innerText)
+                document.getElementById('wrapper').appendChild(mydiv)
+
+            }
+            for(var z=1;z<=9;z++){
+                var mydiv=document.createElement('div')
+                mydiv.className='container'
+                document.getElementById('all').appendChild(mydiv)
+                for(var a=0;a<10;a++){
+                   var mydiv2=document.createElement('div') 
+                   mydiv2.className ='boxes'
+                   mydiv2.innerText='己'
+                   mydiv.appendChild(mydiv2)
+                   
+                }
+            }
+        }
+    </script>
+    <title>20020峯</title>
+</head>
+
+<body onload="drawGame()">
+    <section>
+        <div class="all">
+            <div class="container" id='wrapper'></div>
+        </div>
+    </section>
+
+</body>
+
+</html>
