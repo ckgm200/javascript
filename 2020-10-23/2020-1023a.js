@@ -1,4 +1,28 @@
+document.addEventListener('keydown', (event) => {
+    var keyName = event.code;
+    switch (keyName) {
+      case "ArrowUp":
+        // alert("Up key.")
+        break
+      case "ArrowDown":
+        // alert("down key.")
+        maze[mainX][mainY+1]=2
+        maze[mainX][mainY]=MazeStreet
+        mainY=mainY+1
+        break
+      case "ArrowRight":
+        // alert("Right key.")
+        break
+      case "ArrowLeft":
+        // alert("Left key.")
+        break
+      default:
+
+    }
+    drawMaze()
+  })
 function translateX(param) {
+
 
 }
 function translateY(param) {
