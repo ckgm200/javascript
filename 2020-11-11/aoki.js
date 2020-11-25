@@ -5,8 +5,6 @@ var HIT_RIGHT = 2
 var HIT_TOP = 1
 // 壁の厚み
 var WALL_THICKNESS = 5
-// for count  ScopedCredential
-var score=0
 // キャンバスのサイズ
 var screenH
 var screenW
@@ -27,11 +25,6 @@ var ball_radius = 5
 // タイマーの制御用
 var timer = null
 
-function scoreup(p){
-    score+=p 
-    var item=document.getElementById("textScore")
-    item.innerText=score
-}
 document.addEventListener('keydown', (event) => {
     var keyName = event.code
     switch (keyName) {
@@ -170,13 +163,11 @@ function checkWall() {
     // 左の壁に当たったら、跳ね返る
     if (ballx <= WALL_THICKNESS + ball_radius + 1) {
         balldx = balldx * (-1)
-        scoreup(-10)
     }
-    if (balldy> 0) {
-       if( (bally+ball_radius >pos_Racket_y) &&(ballx+ball_radius>pos_Racket_x)&&(ballx < pos_Racket_x +racket_w)) {
-           balldy=balldy*(-1)
-           scoreup(100)
-       }
+    if (balldy > 0) {
+        if ((bally + ball_radius > pos_Racket_y) && (ballx + ball_radius > pos_Racket_x) && (ballx < pos_Racket_x + racket_w)) {
+            balldy = balldy * (-1)
+        }
     }
     if (bally > screenH - WALL_THICKNESS * 2) {
         gameovar()
