@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function doaction() {
+            var a = 11 * Math.random()
+            var b = Math.floor(a)
+            alert(b)
+            var value = new Array(11)
+            value.fill(0)
+            for (var i = 10000; i >= 0; i--) {
+                var v = Math.floor(Math.random() * 11)
+                value[v]++
+            }
+            // for (var d = 0; d <= 11; d++) {
+            //     alert(value[d] / 10000)
+            // }
+            var item=document.getElementById("mycanvas")
+            var context=item.getContext("2d")
+            if(item.getContext){
+                var pitch=10
+                for(var i=0; i<=11; i++){
+                    x=pitch*i
+                    // y=0
+                    y=400
+                    w=pitch
+                    h=-value[i]*2500/10000
+                    context.fillRect(x,y,w,h)
+                }
+            }
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <canvas id="mycanvas" height="400px" width="600px">
+
+
+    </canvas>
+    <button id="mybutton" onclick="doaction()">描画</button>
+</body>
+
+</html>
